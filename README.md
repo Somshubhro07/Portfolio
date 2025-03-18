@@ -1,28 +1,12 @@
-# Stunning Portfolio
+# React + Vite
 
-A modern, visually striking portfolio website built with **Vite**, **React**, and **Tailwind CSS v3**. Featuring smooth animations with Framer Motion, a sleek design inspired by Dribbble, a mini-game, feedback form, and a dynamic portfolio showcase.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
-- **Home**: Hero section with animated gradients and an engaging introduction.
-- **About**: Detailed skills and bio section with subtle hover effects.
-- **Portfolio**: Filterable project gallery with elegant transitions.
-- **Game**: An interactive mini-game for added engagement.
-- **Feedback**: Fully functional form with client-side validation.
-- **Styling**: Sophisticated gradients and mature design elements.
+Currently, two official plugins are available:
 
-## Tech Stack
-- **Vite + React**: Fast, modern front-end development.
-- **Tailwind CSS v3**: Utility-first CSS framework for rapid UI development.
-- **Framer Motion**: High-performance animations and interactions.
-- **GitHub**: Source code management and collaboration.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Setup
-1. Clone the repository: `git clone https://github.com/Somshubhro07/portfolio.git`
-2. Install dependencies: `npm install`
-3. Start the development server: `npm run dev`
+## Expanding the ESLint configuration
 
-## Deployment
-Deployment coming soon via Vercel!
-
-## Contributions
-We welcome contributions! Feel free to fork the repository, submit pull requests, or suggest new features and improvements.
+If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
