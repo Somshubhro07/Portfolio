@@ -1,12 +1,28 @@
-# React + Vite
+# Stunning Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A cutting-edge, visually captivating portfolio website built with **Vite**, **React**, and **Tailwind CSS v3**. It features seamless animations powered by Framer Motion, a sleek design inspired by Dribbble, an engaging mini-game, a robust feedback form, and a dynamic project showcase.
 
-Currently, two official plugins are available:
+## Features
+- **Home**: Hero section with animated gradients and a compelling introduction.
+- **About**: Detailed skills and biography with refined hover effects.
+- **Portfolio**: Filterable project gallery with smooth transitions.
+- **Game**: An interactive mini-game for entertainment.
+- **Feedback**: Fully functional form with client-side validation.
+- **Styling**: Sophisticated gradients, avoiding immature glows—pure elegance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **Vite + React**: High-performance, modern front-end development.
+- **Tailwind CSS v3**: Reliable, utility-first CSS framework.
+- **Framer Motion**: Industry-standard animations.
+- **GitHub**: Source control and collaborative development.
 
-## Expanding the ESLint configuration
+## Setup
+1. Clone the repository: `git clone https://github.com/your-username/portfolio-stunning.git`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Deployment
+Deployment will be available soon via Vercel.
+
+## Contributions
+We welcome contributions! Feel free to fork the repository, submit pull requests, or suggest new features and improvements.
