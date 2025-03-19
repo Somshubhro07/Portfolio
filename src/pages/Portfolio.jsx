@@ -5,45 +5,52 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const Portfolio = () => {
   const projects = [
-    { title: 'Portfolio Flex', link: 'https://github.com/Somshubhro07/portfolio-stunning', desc: 'This site—next-level heat!' },
-    { title: 'LeetCode Grind', link: 'https://leetcode.com/u/Somshubhro_7', desc: 'Algo domination.' },
-    { title: 'GitHub Vibes', link: 'https://github.com/Somshubhro07', desc: 'Where I flex my code.' },
+    { title: 'Portfolio Flex', link: 'https://github.com/Somshubhro07/portfolio-stunning', desc: 'This site—cosmic explosion!' },
+    { title: 'LeetCode Grind', link: 'https://leetcode.com/u/Somshubhro_7', desc: 'Algo annihilation.' },
+    { title: 'GitHub Galaxy', link: 'https://github.com/Somshubhro07', desc: 'My code universe.' },
   ];
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 2000,
+    responsive: [{ breakpoint: 768, settings: { slidesToShow: 1 } }],
   };
 
   return (
-    <section className="min-h-screen pt-20 pb-10 bg-black text-white">
+    <section className="min-h-screen pt-20 pb-10 bg-gradient-to-br from-[#1a001a] via-[#000000] to-[#001a1a] text-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle,#ff00ff20,#00eaff30,#8a2be220)] animate-pulse" />
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="text-5xl font-extrabold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-pink-500"
+        className="text-4xl md:text-6xl font-extrabold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-[#ff00ff] to-[#00eaff] shadow-[0_0_30px_#ffd700]"
       >
-        My Dope Creations
+        Galactic Creations
       </motion.h2>
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto px-4">
         <Slider {...settings}>
-          {projects.map((project, index) => (
+          {projects.map((project, i) => (
             <motion.div
-              key={index}
+              key={i}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.05, boxShadow: '0 0 25px #ff00ff' }}
-              className="bg-gradient-to-br from-gray-900 to-pink-950 p-6 rounded-xl border border-pink-500/50"
+              whileHover={{ scale: 1.05, boxShadow: '0 0 40px #ff00ff, 0 0 60px #00eaff' }}
+              className="bg-[#1a001a]/80 backdrop-blur-md p-6 rounded-xl border border-[#00eaff]/50 shadow-[0_0_20px_#ffd700]"
             >
-              <h3 className="text-3xl font-bold text-pink-400">{project.title}</h3>
-              <p className="text-lg text-gray-300 mt-2">{project.desc}</p>
-              <a href={project.link} target="_blank" className="inline-block mt-4 text-cyan-400 hover:text-cyan-300 transition font-semibold">
-                Peep This
-              </a>
+              <h3 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#ff00ff] to-[#8a2be2]">{project.title}</h3>
+              <p className="text-base md:text-xl text-gray-300 mt-2">{project.desc}</p>
+              <motion.a
+                href={project.link}
+                target="_blank"
+                whileHover={{ scale: 1.1, color: '#ffd700' }}
+                className="inline-block mt-4 text-[#00eaff] hover:text-[#ffd700] transition font-semibold"
+              >
+                Explore Now
+              </motion.a>
             </motion.div>
           ))}
         </Slider>
