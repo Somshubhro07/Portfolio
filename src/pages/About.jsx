@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import Tilt from 'react-tilt';
+import { Tilt } from 'react-tilt'; // Fixed import
 
 const About = () => {
   const skills = ['JavaScript', 'React', 'Tailwind CSS', 'Algorithms', 'Git'];

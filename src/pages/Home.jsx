@@ -1,27 +1,41 @@
 import { motion } from 'framer-motion';
-import { useEffect, useId } from 'react';
+import { useCallback } from 'react';
 import Particles from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 
 const Home = () => {
-  const id = useId();
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine); // Load the slim version of tsParticles
+  }, []);
 
-  useEffect(() => {
-    loadSlim(window.tsParticles);
-    window.tsParticles.loadJSON(id, {
-      particles: {
-        number: { value: 60 },
-        size: { value: 4 },
-        move: { enable: true, speed: 3 },
-        links: { enable: true, opacity: 0.4 },
-        color: { value: '#ff00ff' },
+  const particlesOptions = {
+    particles: {
+      number: { value: 60 },
+      size: { value: 4 },
+      move: { enable: true, speed: 3 },
+      links: { enable: true, opacity: 0.4, distance: 150 },
+      color: { value: '#ff00ff' },
+    },
+    interactivity: {
+      events: {
+        onHover: { enable: true, mode: 'repulse' },
+        onClick: { enable: true, mode: 'push' },
       },
-    });
-  }, [id]);
+      modes: {
+        repulse: { distance: 100 },
+        push: { quantity: 4 },
+      },
+    },
+  };
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
-      <Particles id={id} className="absolute inset-0" />
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={particlesOptions}
+        className="absolute inset-0"
+      />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
