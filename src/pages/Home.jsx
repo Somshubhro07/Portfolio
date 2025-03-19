@@ -1,43 +1,65 @@
-/* eslint-disable no-unused-vars */
 import { motion } from 'framer-motion';
+import { useEffect, useId } from 'react';
+import Particles from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim';
 
 const Home = () => {
-  return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-indigo-900 to-black text-white relative overflow-hidden">
-      {/* Flying Object */}
-      <motion.div
-        animate={{
-          y: [0, -30, 0],
-          x: [0, 20, 0],
-          rotate: [0, 10, -10, 0],
-        }}
-        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-20 left-10 text-4xl opacity-50"
-      >
-        💻
-      </motion.div>
+  const id = useId();
 
+  useEffect(() => {
+    loadSlim(window.tsParticles);
+    window.tsParticles.loadJSON(id, {
+      particles: {
+        number: { value: 60 },
+        size: { value: 4 },
+        move: { enable: true, speed: 3 },
+        links: { enable: true, opacity: 0.4 },
+        color: { value: '#ff00ff' },
+      },
+    });
+  }, [id]);
+
+  return (
+    <section className="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
+      <Particles id={id} className="absolute inset-0" />
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
         className="text-center z-10"
       >
-        <h1 className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-          Hi, I'm Somshubhro Guha
-        </h1>
-        <p className="text-2xl mb-6">BCA Student | The Heritage Academy</p>
-        <p className="text-lg max-w-md mx-auto">
-          Aspiring developer passionate about coding, problem-solving, and building impactful projects.
+        <motion.h1
+          className="text-7xl font-extrabold tracking-wide glitch"
+          animate={{ textShadow: ['0 0 10px #ff00ff', '0 0 20px #00eaff', '0 0 10px #ff00ff'] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          Somshubhro Guha
+        </motion.h1>
+        <p className="text-2xl mt-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-cyan-400">
+          BCA @ The Heritage Academy | Code Beast
         </p>
         <motion.a
           href="#portfolio"
-          whileHover={{ scale: 1.05 }}
-          className="mt-6 inline-block px-8 py-3 bg-indigo-600 rounded-full hover:bg-indigo-700 transition shadow-lg"
+          whileHover={{ scale: 1.1, boxShadow: '0 0 20px #ff00ff' }}
+          className="mt-8 inline-block px-10 py-4 bg-transparent border-2 border-pink-500 rounded-full text-pink-500 hover:bg-pink-500 hover:text-black transition font-bold"
         >
-          See My Work
+          Witness the Flex
         </motion.a>
       </motion.div>
+      <style>{`
+        .glitch {
+          position: relative;
+          animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+          0% { transform: translate(0); }
+          20% { transform: translate(-3px, 3px); }
+          40% { transform: translate(3px, -3px); }
+          60% { transform: translate(-3px, 0); }
+          80% { transform: translate(3px, 0); }
+          100% { transform: translate(0); }
+        }
+      `}</style>
     </section>
   );
 };
